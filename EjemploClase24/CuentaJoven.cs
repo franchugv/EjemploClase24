@@ -25,6 +25,7 @@ namespace EjemploClase24
             }
             set
             {
+                base.ValidarCadena(value);
                 _titilar = value;
             }
         }
@@ -58,6 +59,7 @@ namespace EjemploClase24
             }
             set
             {
+                base.ValidarFecha(value);
                 _fechaNac = value;
             }
         }

@@ -34,24 +34,41 @@ namespace EjemploClase24
         }
 
 
-        public abstract double Cantidad
+        public virtual double Cantidad
         {
             // SOLO LECTURA
-            get;
+            get
+            {
+                return _cantidad;
+            }
         }
 
 
-        public abstract DateTime FechaNac
+        public virtual DateTime FechaNac
         {
-            get;
-            set;
+            get
+            {
+                return _fechaNac;
+            }
+            set
+            {
+                // VALIDACIÓN DE LA FECHA
+                ValidarFecha(value);
+                _fechaNac = value;
+            }
         }
 
 
-        public abstract string NumCuenta
+        public virtual string NumCuenta
         {
-            get;
-            set;
+            get
+            {
+                return _numCuenta;
+            }
+            set
+            {
+                _numCuenta = value;
+            }
         }
 
 
@@ -59,12 +76,13 @@ namespace EjemploClase24
          
         public virtual void Ingresar(double importe)
         {
-            if (importe <= 0) throw new Exception("Importe incorrecto");
+            ValidarImporte(importe);
 
             _cantidad = importe;
         }
 
         public abstract void Retirar(double importe);
+
 
         // VIIRTUAL, SE PUEDE SOBREESCRIBIR SI SE QUIERE
 
@@ -77,7 +95,17 @@ namespace EjemploClase24
             // Validación 
             if (string.IsNullOrEmpty(cadena)) throw new ArgumentException("Error: Cadena vacía o Null");
 
-            if (!cadena.All(char.IsAsciiDigit)) throw new Exception("Error: No es número");
+            if (!cadena.All(char.IsAsciiLetter)) throw new Exception("Error: No es número");
+        }
+
+        protected virtual void ValidarFecha(DateTime fecha)
+        {
+            if (fecha >= DateTime.Now) throw new OverflowException("Fecha incorrecta:");
+        }
+
+        protected static void ValidarImporte(double importe)
+        {
+            if (importe <= 0) throw new Exception("Importe incorrecto");
         }
 
     }

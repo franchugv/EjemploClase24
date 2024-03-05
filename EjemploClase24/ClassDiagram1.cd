@@ -3,7 +3,7 @@
   <Class Name="EjemploClase24.Cuenta">
     <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAEAAABAACIAAAAAAAAAAgAAAAAIAgQQAAAAAAA=</HashCode>
+      <HashCode>IAiAAAEAAgBAACIAAAAAAAAAAgAAAAAIAgQQAAAAAAA=</HashCode>
       <FileName>Cuenta.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -19,6 +19,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAEAAABAACAAAAAAAAAAAAAAAAAIAAQQAAAAAAA=</HashCode>
       <FileName>CuentaOro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EjemploClase24.CuentaPlatino">
+    <Position X="3" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CuentaPlatino.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
