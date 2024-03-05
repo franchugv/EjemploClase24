@@ -18,10 +18,19 @@ namespace EjemploClase24
 
         // PROPIEDADES A IMPLEMENTAR
 
-        public abstract string Titular
+        public virtual string Titular
         {
-            get;
-            set;
+            get
+            {
+                return _titilar;
+            }
+            set
+            {
+                 // VALIDAR cadena Caaracteres: Solo letreas en blanco
+                 ValidarCadena(value);
+                _titilar = value;
+                
+            }
         }
 
 
@@ -57,7 +66,20 @@ namespace EjemploClase24
 
         public abstract void Retirar(double importe);
 
-        
+        // VIIRTUAL, SE PUEDE SOBREESCRIBIR SI SE QUIERE
+
+        protected virtual void ValidarCadena(string cadena)
+        {
+
+            // Eliminación de los espacios en blanco con Trim()
+            cadena = cadena.Trim();
+
+            // Validación 
+            if (string.IsNullOrEmpty(cadena)) throw new ArgumentException("Error: Cadena vacía o Null");
+
+            if (!cadena.All(char.IsAsciiDigit)) throw new Exception("Error: No es número");
+        }
+
     }
 
 }
