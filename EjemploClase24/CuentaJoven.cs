@@ -70,7 +70,7 @@ namespace EjemploClase24
 
         public override void Ingresar(double importe)
         {
-           
+            base.Ingresar(importe);  
         }
 
         public override void Retirar(double importe)
